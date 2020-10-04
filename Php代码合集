@@ -1,0 +1,99 @@
+#1、print语句
+    <?php
+    print "你的IP地址是：";
+    print getenv("REMOTE_ADDR");
+    print "<br>";
+    print "你的主机名是：";
+    print gethostbyaddr(getenv("REMOTE_ADDR"));
+    print "<br>";
+    print "你的浏览器是：";
+    print getenv("HTTP_USER_AGENT");
+    print "<br>";
+    ?>
+
+#2、if判断语句
+    <?php
+    if(200>100){
+    print "big";}
+    else{print "small";}
+    ?>
+#3、if判断语句，例2
+    <?php
+    print (200>100)? "big":"small";
+    ?>
+#4、if判断语句，例3    
+    <?php
+    print (date("g")<12)? "AM":"FM";
+    ?>
+#5、多重if判断语句(if...elseif)
+      <?php
+      if(date("G")>=6){print"早上好";}
+      elseif(date("G")>=9){print"你好";}
+      elseif(date("G")>=18){print"晚上好";}
+      else{print"不困吗？早点休息吧！";}
+      ?>
+#6、for循环语句
+      <?php
+      for($a=1;$a<=420;$a++)
+      {print "**************************"."<br>";}
+      ?>      
+#7、while循环语句
+      <?php
+      $i=1;
+      while($i<=15)
+      {
+      print "***";
+      print "<br>";
+      $i++;
+      }
+      ?>
+ #8、do...whiley语句
+       <?php
+      $i=1;
+      do{
+      print "*****";
+      print "<br>";
+      $i++;}
+      while($i<=15)
+      ?>
+      
+#9.switch语句(case、break、default:)
+      <?php
+      switch(date("G")){ #条件部分后面仅有一对大括号。
+      case 10:print "这是10点的零食"; break;
+      case 15:print "这是3点的零食";break;
+      default: print "这不是零食";}#注意default后面的"："号。
+      ?>
+
+#10、switch & for(嵌套循环、双重循环)
+      <?php
+      for($a=1;$a<=8;$a++){
+        for($b=1;$b<=7;$b++){
+          switch($b){
+          case 1:print"●";break;
+          case 2: print "○";break;
+          case 3: print "★";break;
+          case 4: print "✰";break;
+          case 5: print "▲";break;
+          case 6: print "▼";break;
+          case 7: print "<br>";break;
+      }
+      }
+      }
+      ?>
+#11、 array & while
+    <?php
+    $a=array("猪","狗","牛","虎","蛇","龙","鸡");
+    $i=0;
+      while($i<=7){
+        print $a[$i].'<br>';
+        $i++;
+      }
+    ?>
+#12 array & for
+        <?php
+      $a=array("猪","狗","牛","虎","蛇","龙","鸡");
+     for($i=0;$i<=7; $i++) {
+          print $a[$i].'<br>';
+         }
+      ?>      
