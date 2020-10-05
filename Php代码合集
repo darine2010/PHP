@@ -113,3 +113,26 @@
 		print "总分是："."<br>";
 		print $a["Math"]+$a["English"]+$a["Pe"];
 		?>
+#15 date&while&strtotime函数的应用事例
+#求当前日期及之后30天这段日期内相关日期信息
+#求当前日期及之后30天这段日期内相关日期信息
+#例1
+	<?php
+	$i=0;
+	$m='/';
+	while($i<=30){
+	$a=date("Y",strtotime("now + $i day"));
+	$b=date("m",strtotime("now + $i day"));
+	$c=date("j",strtotime("now + $i day"));
+	$d=date("l",strtotime("now + $i day"));
+	print $a.$m.$b.$m.$c." "."(".$d.")";
+	print "<br>";
+	$i=$i+1;}
+	?>
+#例2
+	<?php
+	for($i=0;$i<=30;$i++){
+	print date("Y/m/d (l)",strtotime("now +$i day"));
+	print "<br>";
+	}
+	?>
