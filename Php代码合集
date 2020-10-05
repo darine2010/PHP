@@ -57,10 +57,10 @@
       while($i<=15)
       ?>
       
-#9.switch语句(case、break、default:)
+#9.switch语句(case、break、default:)，break必不可少。
       <?php
       switch(date("G")){ #条件部分后面仅有一对大括号。
-      case 10:print "这是10点的零食"; break;
+      case 10:print "这是10点的零食"; break;#case后面为数值，非条件。
       case 15:print "这是3点的零食";break;
       default: print "这不是零食";}#注意default后面的"："号。
       ?>
