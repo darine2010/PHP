@@ -97,3 +97,11 @@
           print $a[$i].'<br>';
          }
       ?>      
+#13.array&if应用事例
+		<?php
+		$a=array("不早了","早上好","您好","晚上好");
+		if(date("G")>=18){print $a[3];}#判断条件罗列时，应该从大至少开始，即：18、9、6，因条件筛选从第一条语句开始。
+			elseif(date("G")>=9){print $a[2];}
+				elseif(date("G")>=6){print $a[1];}
+			else{print $a[0];}
+		?>	 
