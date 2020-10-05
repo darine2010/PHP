@@ -105,3 +105,11 @@
 				elseif(date("G")>=6){print $a[1];}
 			else{print $a[0];}
 		?>	 
+#14.自定义数组array
+		<?php
+		$a["Math"]=98;
+		$a["English"]=99;
+		$a["Pe"]=100;
+		print "总分是："."<br>";
+		print $a["Math"]+$a["English"]+$a["Pe"];
+		?>
