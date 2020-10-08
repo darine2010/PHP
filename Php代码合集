@@ -136,3 +136,24 @@
 	print "<br>";
 	}
 	?>
+#16、用php显示select语句查询结果。
+	<?php
+	$s=new PDO('mysql:host=localhost;dbname=db1','root','125877');/*借助new PDO接入sql服务器*/
+	print "connection ok!";
+	print '<br>';
+	$a=<<<eot /*借助here document将一组select查询语句赋给变量*/
+	select empid,avg(sales) from tb
+		where sales>=50
+		group by empid
+		having avg(sales)>=120
+		order by avg(sales) desc;
+	eot;
+	$re=$s->query($a);/*借助query语法，将sel语句查询结果赋值给变量re*/
+	while($result=$re->fetch()){           /* 通过fetch()语法将变量$re的值赋给数组变量$result */
+		print '员工号：';
+	print $result[0];
+		print '平均销售额：';
+	print $result[1];
+	print '<br>';
+	}
+	?>
