@@ -157,3 +157,37 @@
 	print '<br>';
 	}
 	?>
+#17.用浏览器显示本期各项指标。
+		<?php
+		$a=new PDO('mysql:host=localhost;dbname=01mainindexs_gjj','root','125877');
+		print '连接OK';
+		print  '<br>';
+		print '<hr>';
+		$re=$a->query("CALL Cur_indicators('qx','2019-12-31',3,5);");
+		while($result=$re->fetch()){
+		print '机构：';
+		print $result[1].'<br>';
+		print '数据期间：';
+		print $result[0].'<br>';
+		print '缴存额：';
+		print $result[2].',';
+		print '提取额：';
+		print $result[3].',';
+		print '发放额：';
+		print $result[4].',';
+		print '回收额：';
+		print $result[5].',';
+		print '单位开户：';
+		print $result[6].',';
+		print '个人开户：';
+		print $result[7].',';
+		print '发放笔数：';
+		print $result[8].',';
+		print '本期资金净流出额：';
+		print $result[9].',';
+		print '提取率：';
+		print $result[10].',';
+		print '<br>';
+		print '<hr>';
+		}
+		?>
